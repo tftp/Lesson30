@@ -23,5 +23,9 @@ get '/' do
 	erb :welcome		
 end
 
+get '/message' do
+	erb :message		
+end
+
 
 
