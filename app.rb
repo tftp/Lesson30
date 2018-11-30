@@ -5,7 +5,18 @@ require 'sinatra/reloader'
 require 'sinatra/activerecord'
 
 
-set :database, "sqlite3:school.db"
+set :database, "sqlite3:peregovor.db"
+
+
+class Messages < ActiveRecord::Base
+end
+
+class Comments < ActiveRecord::Base
+end
+
+class Likes < ActiveRecord::Base
+end
+
 
 
 get '/' do
