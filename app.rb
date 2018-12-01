@@ -30,9 +30,10 @@ end
 
 post '/message' do
 	@c=Messages.new params[:message]
-	@c.ip_adress = request.env['HTTP_X_REAL_IP']
+	@c.ip_adress = request.ip
 	if @c.save
-		erb "Спасибо за Ваш заказ, мы свяжемся с Вами в ближайшее время."
+		@res_db = Messages.all
+		erb :welcome
 	else
 		@error=@c.errors.full_messages.first
 		erb :message
