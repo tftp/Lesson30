@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2018_11_30_145043) do
   end
 
   create_table "messages", force: :cascade do |t|
+    t.text "title"
     t.text "mess"
     t.text "ip_adress"
     t.datetime "created_at", null: false
