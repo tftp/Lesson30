@@ -3,11 +3,11 @@
 <form action="/message" method="POST">
   <div class="form-group">
     <label>Заголовок</label>
-    <input type="text" class="form-control" name="message[title]" placeholder="Title here">
+    <input type="text" class="form-control" name="message[title]" placeholder="Title here" value="<%=@c.title%>">
   </div>
   <div class="form-group">
     <label>Напишите здесь.</label>
-    <textarea class="form-control" name="message[mess]" rows="3" ></textarea>
+    <textarea class="form-control" name="message[mess]" rows="3" ><%=@c.mess%></textarea>
   </div>
   <button type="submit" class="btn btn-primary">Опубликовать</button>
 </form>

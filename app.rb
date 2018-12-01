@@ -9,7 +9,8 @@ set :database, "sqlite3:peregovor.db"
 
 
 class Messages < ActiveRecord::Base
-	
+	validates :title, presence: true
+	validates :mess, presence: true
 end
 
 class Comments < ActiveRecord::Base
