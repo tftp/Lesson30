@@ -5,7 +5,7 @@
 	<%@res_db.each do |res|%>
 		<tr>
 			<td>
-				<h3>Публикация <%=res['id']%></h3>
+				<h4><%=res['id']%> <%=res['title']%></h4>
 				<p><%=res['mess']%></p>
 				<p><%=res['updated_at']%></p>
 				<p><%=res['ip_adress']%></p>
