@@ -46,6 +46,7 @@ end
 get '/post/:post_id' do
 	res_db = Messages.where "id=#{params[:post_id]}"
 	@res = res_db[0]
+#	@c=Comments.new params[:comments]
 	
 	erb :post
 	
