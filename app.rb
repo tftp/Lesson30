@@ -20,7 +20,7 @@ end
 
 
 get '/' do
-	@res_db = Messages.all
+	@res_db = Messages.order "created_at DESC"
 	erb :welcome		
 end
 
@@ -32,7 +32,7 @@ post '/message' do
 	@c=Messages.new params[:message]
 	@c.ip_adress = request.ip
 	if @c.save
-		@res_db = Messages.all
+		@res_db = Messages.order "created_at DESC"
 		erb :welcome
 	else
 		@error=@c.errors.full_messages.first
