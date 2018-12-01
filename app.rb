@@ -9,6 +9,7 @@ set :database, "sqlite3:peregovor.db"
 
 
 class Messages < ActiveRecord::Base
+	
 end
 
 class Comments < ActiveRecord::Base
@@ -32,8 +33,7 @@ post '/message' do
 	@c=Messages.new params[:message]
 	@c.ip_adress = request.ip
 	if @c.save
-		@res_db = Messages.order "created_at DESC"
-		erb :welcome
+		redirect to '/'
 	else
 		@error=@c.errors.full_messages.first
 		erb :message
