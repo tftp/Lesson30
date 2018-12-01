@@ -41,3 +41,8 @@ post '/message' do
 
 end
 
+get '/post/:post_id' do
+	post_id = params[:post_id]
+	erb "#{post_id}"
+	
+end
