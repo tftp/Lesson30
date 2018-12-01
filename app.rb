@@ -27,6 +27,7 @@ get '/' do
 end
 
 get '/message' do
+	@c=Messages.new
 	erb :message		
 end
 
