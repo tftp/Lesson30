@@ -1,2 +1,16 @@
-<p>Добро пожаловать в ШКОЛЬНЫЙ ПОРТАЛ.</p>
-<p>Эта площадка активно развивается. Каждый день добавляется что-то новое.</p>
+
+<p><h2>Просмотр публикаций.</h2></p>
+<table class="table table-striped">
+	<tbody>
+	<%@res_db.each do |res|%>
+		<tr>
+			<td>
+				<h3>Публикация <%=res['id']%></h3>
+				<p><%=res['mess']%></p>
+				<p><%=res['updated_at']%></p>
+				<p><%=res['ip_adress']%></p>
+			</td>
+		</tr>
+	<%end%>	
+	</tbody>
+</table>
